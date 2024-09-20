@@ -7,8 +7,8 @@ const Footer = () => {
             <div className="footer-content">
                 <p>&copy; 2024 Sua Empresa. Todos os direitos reservados.</p>
                 <ul className="social-links">
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Git</a></li>
+                    <li><a href="#">E-mail</a></li>
                     <li><a href="#">Instagram</a></li>
                 </ul>
             </div>
