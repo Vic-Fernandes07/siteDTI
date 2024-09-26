@@ -14,13 +14,20 @@ export const Header = () => {
         <div className="row m-0 divMenu m-0">
           <div className="col m-0 bg-black">
             <Link to={"closet"}>
-
-            <img className="closet" src={Closet} alt="Closet icon" />
+              <img className="closet" src={Closet} alt="Closet icon" />
             </Link>
-            <img className="home" src={home} alt="Home icon" />
-            <img className="book" src={Book} alt="Book icon" />
-            <img className="people" src={People} alt="Person icon"/>
-            <img className="icon" src={icon} alt="Notification icon" />
+            <Link to={"/"}>
+              <img className="home" src={home} alt="Home icon" />
+            </Link>
+            <Link to={"book"}>
+              <img className="book" src={Book} alt="Book icon" />
+            </Link>
+            <Link to={"login"}>
+              <img className="people" src={People} alt="Person icon" />
+            </Link>
+            <Link>
+              <img className="icon" src={icon} alt="Notification icon" />
+            </Link>
           </div>
         </div>
       </div>
