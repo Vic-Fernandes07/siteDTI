@@ -7,6 +7,8 @@ import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
 import Footer from "./components/footer/Footer.jsx";
 import Exemplo from "./exemplo.jsx";
+import { element } from "prop-types";
+import Closet from "./components/closet/Closet.jsx";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +18,9 @@ const router = createBrowserRouter([
     children: [
       { path: "/footer", element: <Footer /> },
       { path: "/ola", element: <Exemplo /> },
+      { path: "/closet", element: <Closet/> },
+      { path: "/"}
+
     ],
   },
 ]);
