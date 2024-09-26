@@ -17,7 +17,7 @@ const router = createBrowserRouter([
     <img src={cabide} alt="Imagem" />
     <img src="" alt="" />
     <h2>Oops! Algo deu errado.</h2>
-    <p>Essa pagina não existe</p>
+    <p>Essa pagina não existe.</p>
     </>,
  
     children: [
