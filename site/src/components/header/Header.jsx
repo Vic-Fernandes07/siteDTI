@@ -13,7 +13,7 @@ export const Header = () => {
       <div className="d-block bg-dark text-light">
         <div className="row m-0 divMenu m-0">
           <div className="col m-0 bg-black">
-            <Link to={"ola"}>
+            <Link to={"closet"}>
 
             <img className="closet" src={Closet} alt="Closet icon" />
             </Link>
