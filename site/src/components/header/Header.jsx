@@ -1,26 +1,31 @@
-import React from 'react'
-import home from '../../assets/home.jpg'
-import Closet from '../../assets/Closet.jpg'
-import livro from '../../assets/livro.jpg'
-import pessoa from '../../assets/pessoa.jpg'
-import notificacao from '../../assets/notificacao.jpg'
+import React from "react";
+import "./Header.css";
+import home from "../../assets/home.png";
+import Closet from "../../assets/closet.png";
+import Book from "../../assets/book.png";
+import People from "../../assets/people.png";
+import icon from "../../assets/icon.png";
+import { Link } from "react-router-dom";
 
-const Header = () => {
+export const Header = () => {
   return (
     <>
-    <div className="d-block bg-dark text-light">
+      <div className="d-block bg-dark text-light">
         <div className="row m-0 divMenu m-0">
-            {/*icones*/}
-            <div className="col m-0 bg-black">
-                <img className="home" src={home} alt="" />
-                <img className="closet" src={Closet} alt="" />
-                <img className="livro" src={livro} alt="" />
-                <img className="pessoa" src={pessoa} alt="" />
-                <img className="notificacao" src={notificacao} alt="" />
-            </div>
-        </div>
-    </div>
-  </> )
-}
+          <div className="col m-0 bg-black">
+            <Link to={"ola"}>
 
-export default Header
+            <img className="closet" src={Closet} alt="Closet icon" />
+            </Link>
+            <img className="home" src={home} alt="Home icon" />
+            <img className="book" src={Book} alt="Book icon" />
+            <img className="people" src={People} alt="Person icon" />
+            <img className="icon" src={icon} alt="Notification icon" />
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Header;
