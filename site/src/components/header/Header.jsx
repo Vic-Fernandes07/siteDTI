@@ -19,7 +19,7 @@ export const Header = () => {
             </Link>
             <img className="home" src={home} alt="Home icon" />
             <img className="book" src={Book} alt="Book icon" />
-            <img className="people" src={People} alt="Person icon" />
+            <img className="people" src={People} alt="Person icon"/>
             <img className="icon" src={icon} alt="Notification icon" />
           </div>
         </div>
