@@ -1,0 +1,213 @@
+.closet-box {
+    max-width: 900px; 
+    margin: 0 auto; 
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+.closet-container {
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.upload-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.upload-section input {
+    margin-bottom: 15px;
+}
+
+button {
+    padding: 10px 15px;
+    margin-left: 10px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #4f4f4f;
+}
+
+.custom-select {
+    position: relative;
+    display: inline-block;
+    width: 220px;
+    margin-bottom: 20px;
+}
+
+.selected-category {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.selected-category img {
+    width: 25px;
+    margin-right: 10px;
+}
+
+.selected-category span {
+    flex-grow: 1;
+    text-align: left;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    border: 1px solid #ddd;
+    max-height: 150px;
+    overflow-y: auto;
+    z-index: 1;
+}
+
+.custom-select:hover .dropdown {
+    display: block;
+}
+
+.dropdown-option {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.dropdown-option:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown-option img {
+    width: 25px;
+    margin-right: 10px;
+}
+
+.preview-section {
+    margin-top: 20px;
+}
+
+.image-preview {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.folders-list {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.folder {
+    width: 200px;
+    background-color: #e0e0e0;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.folder:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.folder-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.folder-icon {
+    width: 30px;
+    margin-right: 10px;
+}
+
+.folder-content {
+    margin-top: 10px;
+    padding-left: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.clothing-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.clothing-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.remove-button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.remove-button:hover {
+    background-color: darkred;
+}
+
+.file-label {
+    display: inline-block;
+    background-color: #000000; /* Cor do fundo */
+    color: white; /* Cor do texto */
+    padding: 10px 10px; /* Espacamento */
+    border-radius: 5px; /* Cantos arredondados */
+    cursor: pointer; /* Muda o cursor */
+    margin-bottom: 15px; /* Espaçamento abaixo */
+    text-align: center; /* Centraliza o texto */
+}
+
+.preview-section {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.image-preview {
+    width: 150px; /* Ajuste conforme necessário */
+    height: 150px; /* Ajuste conforme necessário */
+    border-radius: 10px;
+    object-fit: cover;
+    margin: 10px auto; /* Centraliza a imagem */
+}
