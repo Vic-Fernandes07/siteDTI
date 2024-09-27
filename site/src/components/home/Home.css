@@ -1,21 +1,15 @@
-
-.informacoes{
-    color: white;
-    padding: 15px;
+.informacoes {
+  padding-top: 50px;
+  padding-bottom: 100px;
+  padding-left: 50px;
 }
 
-.facalogin{
-    color: white;
+.facalogin {
+  padding-top: 50px;
+  padding-right: 50px;
+  text-align: center;
 }
 
-.h1{
-    margin: 10px;
-}
-
-.h2{
-    margin: 10px;
-}
-
-.h3{
-    margin: 10px;
+.login-button {
+  margin-top: 20px;
 }

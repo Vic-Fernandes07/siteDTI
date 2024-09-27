@@ -11,7 +11,7 @@ import Closet from "./components/closet/Closet.jsx";
 import Login from "./components/login/Login.jsx";
 import Book from "./components/book/Lookbook.jsx";
 import Home from "./components/home/Home.jsx";
-import Carrinho from "./components/carrinho/Carrinho.jsx"
+import Carrinho from "./components/carrinho/Carrinho.jsx";
 import Lookbook from "./components/book/Lookbook.jsx";
 
 const router = createBrowserRouter([
@@ -32,7 +32,8 @@ const router = createBrowserRouter([
       { path: "/book", element: <Lookbook /> },
       { path: "/login", element: <Login /> },
       { path: "/carrinho", element: <Carrinho /> },
-      { path: "/home", element: <Home/>}
+      { path: "/home", element: <Home /> },
+      { path: "/", element: <Home /> },
     ],
   },
 ]);
