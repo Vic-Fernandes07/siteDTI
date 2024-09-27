@@ -4,6 +4,7 @@ import { auth, provider, signInWithPopup } from "./firebase"; // Importa o Fireb
 import { useNavigate } from "react-router-dom"; // Importa o useNavigate
 import "./Login.css";
 import google from "../../assets/google.svg";
+import { Link, RouterProvider, createBrowserRouter } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
