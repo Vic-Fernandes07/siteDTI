@@ -10,8 +10,6 @@ import { element } from "prop-types";
 import Closet from "./components/closet/Closet.jsx";
 import Login from "./components/login/Login.jsx";
 import Book from "./components/book/Book.jsx";
-
-
 const router = createBrowserRouter([
   {
     path: "/",
