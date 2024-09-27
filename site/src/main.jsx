@@ -10,10 +10,6 @@ import { element } from "prop-types";
 import Closet from "./components/closet/Closet.jsx";
 import Login from "./components/login/Login.jsx";
 import Book from "./components/book/Book.jsx";
-<<<<<<< HEAD
-=======
-/*import Carrinho from "./components/carrinho/Carrinho.jsx";*/
->>>>>>> origin/vitoria
 
 const router = createBrowserRouter([
   {
