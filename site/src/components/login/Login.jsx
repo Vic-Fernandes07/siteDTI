@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { auth, provider, signInWithPopup } from "./firebase"; // Importa o Firebase
 import "./Login.css";
 import google from "../../assets/google.svg";
+import { Link, RouterProvider, createBrowserRouter } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");

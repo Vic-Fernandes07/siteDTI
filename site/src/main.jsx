@@ -9,7 +9,10 @@ import cabide from "./assets/cabide.png";
 import { element } from "prop-types";
 import Closet from "./components/closet/Closet.jsx";
 import Login from "./components/login/Login.jsx";
-import Book from "./components/book/Book.jsx";
+import Book from "./components/book/Lookbook.jsx";
+import Home from "./components/home/Home.jsx";
+import Carrinho from "./components/carrinho/Carrinho.jsx"
+import Lookbook from "./components/book/Lookbook.jsx";
 
 const router = createBrowserRouter([
   {
@@ -26,9 +29,10 @@ const router = createBrowserRouter([
     children: [
       { path: "/footer", element: <Footer /> },
       { path: "/closet", element: <Closet /> },
-      { path: "/book", element: <Book /> },
+      { path: "/book", element: <Lookbook /> },
       { path: "/login", element: <Login /> },
-      /*{ path: "/carrinho", element: <Carrinho /> },*/
+      { path: "/carrinho", element: <Carrinho /> },
+      { path: "/home", element: <Home/>}
     ],
   },
 ]);   
