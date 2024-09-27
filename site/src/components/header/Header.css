@@ -1,28 +1,8 @@
-.home {
-  height: 30px;
-  margin: 20px;
+.divMenu {
+  width: 100%;
 }
 
-.closet {
+.iconeMenu {
+  margin: 10px 20px;
   height: 30px;
-  margin: 20px;
-}
-
-.book {
-  height: 30px;
-  margin: 20px;
-}
-
-.people {
-  height: 30px;
-  margin: 20px;
-}
-
-.icon {
-  height: 30px;
-  margin: 20px;
-}
-
-.carrinho{
-  margin: 0px;
 }
