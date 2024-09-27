@@ -9,14 +9,6 @@ function App() {
   return (
     <div>
       <Header />
-      <div>
-        <img className="picture" src={Picture} alt="" />
-        <br />
-        <h2 className="texto">Bem-vindos!
-        <br />
-        A Dress To Impress fica feliz em te receber👋</h2>
-        <p></p>
-      </div>
       <Outlet />
       <Footer />
     </div>
