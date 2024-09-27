@@ -10,6 +10,10 @@ import { element } from "prop-types";
 import Closet from "./components/closet/Closet.jsx";
 import Login from "./components/login/Login.jsx";
 import Book from "./components/book/Book.jsx";
+import Home from "./components/home/Home.jsx";
+import Carrinho from "./components/carrinho/Carrinho.jsx"
+
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -27,7 +31,8 @@ const router = createBrowserRouter([
       { path: "/closet", element: <Closet /> },
       { path: "/book", element: <Book /> },
       { path: "/login", element: <Login /> },
-      /*{ path: "/carrinho", element: <Carrinho /> },*/
+      { path: "/carrinho", element: <Carrinho /> },
+      { path: "/home", element: <Home/>}
     ],
   },
 ]);
