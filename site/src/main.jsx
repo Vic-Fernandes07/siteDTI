@@ -31,8 +31,8 @@ const router = createBrowserRouter([
       /*{ path: "/carrinho", element: <Carrinho /> },*/
     ],
   },
-]);
-
+]);   
+  
 ReactDOM.createRoot(document.getElementById("root")).render(
   <StrictMode>
     <RouterProvider router={router} />
