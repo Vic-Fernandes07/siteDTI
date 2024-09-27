@@ -8,12 +8,7 @@
   background-color: #242424;
 }
 
-.picture {
-  position: relative;
-  height: 750px;
-}
-
-.texto{
+.texto {
   color: white;
   margin-top: 20px;
   text-align: center;
