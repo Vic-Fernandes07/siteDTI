@@ -1,54 +1,51 @@
-
 import React, { useState } from "react";
-import { auth, provider, signInWithPopup } from "./firebase"; // Importa o Firebase
+import { auth, provider } from "./firebase"; // Importa o Firebase
+import { signInWithPopup, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import "./Login.css";
 import google from "../../assets/google.svg";
-import { Link, useHistory } from "react-router-dom"; // Importa useHistory
+import { useHistory } from "react-router-dom"; // Importa useHistory
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [isRegistering, setIsRegistering] = useState(false);
+  const history = useHistory(); // Usando useHistory para redirecionamento
 
   const handleLoginSubmit = (event) => {
     event.preventDefault();
 
-    if (email === "user@example.com" && password === "password123") {
-      alert("Login realizado com sucesso!");
-      setError("");
-      navigate("/profile"); // Redireciona para a página de perfil
+    // Autenticação com email e senha
+    if (!isRegistering) {
+      signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          alert(`Login realizado com sucesso! Bem-vindo, ${userCredential.user.email}`);
+          history.push("/profile"); // Redireciona para a página de perfil
+        })
+        .catch((error) => {
+          setError("Credenciais inválidas!");
+        });
     } else {
-      setError("Credenciais inválidas!");
+      // Caso de registro
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          alert(`Registro realizado com sucesso! Bem-vindo, ${userCredential.user.email}`);
+          setIsRegistering(false); // Volta ao login após registro
+        })
+        .catch((error) => {
+          setError(error.message); // Mostra a mensagem de erro
+        });
     }
-  };
-
-  const handleRegisterSubmit = (event) => {
-    event.preventDefault();
-
-    // Registrar usuário no Firebase
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Registro bem-sucedido
-        alert(
-          `Registro realizado com sucesso! Bem-vindo, ${userCredential.user.email}`
-        );
-        setIsRegistering(false); // Volta ao login após registro
-      })
-      .catch((error) => {
-        console.error(error);
-        setError(error.message); // Mostra a mensagem de erro
-      });
   };
 
   // Função para autenticar com Google
   const handleGoogleLogin = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
-        console.log(result.user); // Informações do usuário autenticado
         alert(`Bem-vindo, ${result.user.displayName}!`);
+        history.push("/profile"); // Redireciona para a página de perfil
       })
       .catch((error) => {
-        console.error(error);
         setError("Erro ao autenticar com Google.");
       });
   };
@@ -62,7 +59,7 @@ const Login = () => {
   return (
     <div className="login-container">
       <h2>{isRegistering ? "Registrar" : "Login"}</h2>
-      <form onSubmit={isRegistering ? handleRegisterSubmit : handleLoginSubmit}>
+      <form onSubmit={handleLoginSubmit}>
         <div>
           <label htmlFor="email">Email:</label>
           <input
@@ -89,20 +86,14 @@ const Login = () => {
           {isRegistering ? (
             <>
               Já possui uma conta?{" "}
-              <span
-                onClick={toggleRegister}
-                style={{ cursor: "pointer", color: "blue" }}
-              >
+              <span onClick={toggleRegister} style={{ cursor: "pointer", color: "blue" }}>
                 Fazer login
               </span>
             </>
           ) : (
             <>
               Não possui uma conta?{" "}
-              <span
-                onClick={toggleRegister}
-                style={{ cursor: "pointer", color: "blue" }}
-              >
+              <span onClick={toggleRegister} style={{ cursor: "pointer", color: "blue" }}>
                 Cadastrar-se
               </span>
             </>
@@ -113,8 +104,8 @@ const Login = () => {
 
       <hr />
 
-{/* Botão de login com Google */}
-<button className="google" onClick={handleGoogleLogin}>
+      {/* Botão de login com Google */}
+      <button className="google" onClick={handleGoogleLogin}>
         <img src={google} alt="Login com Google" style={{ width: "15px", marginRight: "8px" }} />
         Login com Google
       </button>
