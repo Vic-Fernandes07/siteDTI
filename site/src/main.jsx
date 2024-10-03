@@ -14,6 +14,7 @@ import Home from "./components/home/Home.jsx";
 import Carrinho from "./components/carrinho/Carrinho.jsx";
 import Lookbook from "./components/book/Lookbook.jsx";
 
+
 const router = createBrowserRouter([
   {
     path: "/",

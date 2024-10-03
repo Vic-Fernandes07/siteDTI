@@ -1,5 +1,6 @@
+
 import React, { useState } from "react";
-import {auth, provider, signInWithPopup, createUserWithEmailAndPassword,} from "./firebase"; 
+import { auth, provider, signInWithPopup } from "./firebase"; // Importa o Firebase
 import "./Login.css";
 import google from "../../assets/google.svg";
 import { Link, useHistory } from "react-router-dom"; // Importa useHistory
@@ -8,16 +9,14 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [isRegistering, setIsRegistering] = useState(false); 
-  const history = useHistory(); 
 
   const handleLoginSubmit = (event) => {
     event.preventDefault();
 
-  
     if (email === "user@example.com" && password === "password123") {
       alert("Login realizado com sucesso!");
       setError("");
+      navigate("/profile"); // Redireciona para a página de perfil
     } else {
       setError("Credenciais inválidas!");
     }
@@ -41,6 +40,7 @@ const Login = () => {
       });
   };
 
+  // Função para autenticar com Google
   const handleGoogleLogin = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
@@ -112,12 +112,10 @@ const Login = () => {
       </form>
 
       <hr />
-      <button className="google" onClick={handleGoogleLogin}>
-        <img
-          src={google}
-          alt="Login com Google"
-          style={{ width: "15px", marginRight: "8px" }}
-        />
+
+{/* Botão de login com Google */}
+<button className="google" onClick={handleGoogleLogin}>
+        <img src={google} alt="Login com Google" style={{ width: "15px", marginRight: "8px" }} />
         Login com Google
       </button>
     </div>
