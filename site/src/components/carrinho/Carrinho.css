@@ -1,0 +1,43 @@
+.carrinho-container {
+  border: 1px solid #ddd;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  width: 300px;
+  margin: 20px auto;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.lista-itens {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item-carrinho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.item-carrinho span {
+  font-size: 1rem;
+}
+
+.btn-remover {
+  padding: 5px 10px;
+  font-size: 0.9rem;
+}
+
+.total {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: right;
+}
