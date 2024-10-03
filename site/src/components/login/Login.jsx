@@ -4,7 +4,7 @@ import { auth, provider, signInWithPopup } from "./firebase"; // Importa o Fireb
 import { useNavigate } from "react-router-dom"; // Importa o useNavigate
 import "./Login.css";
 import google from "../../assets/google.svg";
-import { Link, RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -12,7 +12,6 @@ const Login = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate(); // Inicializa o useNavigate
 
-  // Função para lidar com o envio do formulário
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -27,16 +26,16 @@ const Login = () => {
   };
 
   // Função para autenticar com Google
-  const handleGoogleLogin = async () => {
-    try {
-      const result = await signInWithPopup(auth, provider);
-      console.log(result.user); // Informações do usuário autenticado
-      alert(`Bem-vindo, ${result.user.displayName}!`);
-      navigate("/profile"); // Redireciona para a página de perfil
-    } catch (error) {
-      console.error(error);
-      setError("Erro ao autenticar com Google.");
-    }
+  const handleGoogleLogin = () => {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        console.log(result.user); // Informações do usuário autenticado
+        alert(`Bem-vindo, ${result.user.displayName}!`);
+      })
+      .catch((error) => {
+        console.error(error);
+        setError("Erro ao autenticar com Google.");
+      });
   };
 
   return (
@@ -53,7 +52,6 @@ const Login = () => {
             required
           />
         </div>
-
         <div>
           <label htmlFor="password">Senha:</label>
           <input
@@ -64,16 +62,18 @@ const Login = () => {
             required
           />
         </div>
-
-        {error && <p style={{ color: "red" }}>{error}</p>} {/* Exibe erro se houver */}
-
+        {error && <p style={{ color: "red" }}>{error}</p>}{" "}
+      
+        <p className="register">
+          Não possui uma conta? <Link to="/register">Cadastrar-se</Link>
+        </p>
         <button type="submit">Entrar</button>
       </form>
 
       <hr />
 
-      {/* Botão de login com Google */}
-      <button className="google" onClick={handleGoogleLogin}>
+{/* Botão de login com Google */}
+<button className="google" onClick={handleGoogleLogin}>
         <img src={google} alt="Login com Google" style={{ width: "15px", marginRight: "8px" }} />
         Login com Google
       </button>

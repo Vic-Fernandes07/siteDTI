@@ -1,5 +1,5 @@
 .login-container {
-    max-width: 300px;
+    max-width: 400px;
     margin: 50px auto;
     padding: 20px;
     border: 1px solid #000000;
@@ -41,8 +41,6 @@
     background-color: #4f4f4f;
   }
 
-
-
-
-
-  
+  .register{
+    text-align: center;
+  }

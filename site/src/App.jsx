@@ -10,10 +10,7 @@ function App() {
   return (
     <div>
       <Header />
-      <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/profile" element={<Profile />} />
-      </Routes>
+      <Outlet />
       <Footer />
     </div>
   );
