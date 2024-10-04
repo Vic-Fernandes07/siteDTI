@@ -29,8 +29,6 @@ export const Header = () => {
           <Link>
             <img className="iconeMenu" src={icon} alt="Notification icon" />
           </Link>
-
-          {/* Link para a página do Carrinho */}
           <Link to={"/carrinho"}>
             <img className="iconeMenu" src={CarrinhoIcon} alt="Carrinho icon" />
           </Link>

@@ -1,65 +1,41 @@
 import React, { useState } from "react";
-import { auth, provider } from "./firebase"; // Importa o Firebase
-import { signInWithPopup, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { auth, provider, signInWithPopup } from "./firebase"; 
 import "./Login.css";
 import google from "../../assets/google.svg";
-import { useHistory } from "react-router-dom"; // Importa useHistory
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [isRegistering, setIsRegistering] = useState(false);
-  const history = useHistory(); // Usando useHistory para redirecionamento
 
-  const handleLoginSubmit = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
 
-    // Autenticação com email e senha
-    if (!isRegistering) {
-      signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-          alert(`Login realizado com sucesso! Bem-vindo, ${userCredential.user.email}`);
-          history.push("/profile"); // Redireciona para a página de perfil
-        })
-        .catch((error) => {
-          setError("Credenciais inválidas!");
-        });
+    if (email === "user@example.com" && password === "password123") {
+      alert("Login realizado com sucesso!");
+      setError("");
     } else {
-      // Caso de registro
-      createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-          alert(`Registro realizado com sucesso! Bem-vindo, ${userCredential.user.email}`);
-          setIsRegistering(false); // Volta ao login após registro
-        })
-        .catch((error) => {
-          setError(error.message); // Mostra a mensagem de erro
-        });
+      setError("Credenciais inválidas!");
     }
   };
 
-  // Função para autenticar com Google
   const handleGoogleLogin = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
+        console.log(result.user); 
         alert(`Bem-vindo, ${result.user.displayName}!`);
-        history.push("/profile"); // Redireciona para a página de perfil
       })
       .catch((error) => {
+        console.error(error);
         setError("Erro ao autenticar com Google.");
       });
   };
 
-  // Função para alternar entre login e registro
-  const toggleRegister = () => {
-    setIsRegistering((prev) => !prev);
-    setError(""); // Limpa o erro ao alternar
-  };
-
   return (
     <div className="login-container">
-      <h2>{isRegistering ? "Registrar" : "Login"}</h2>
-      <form onSubmit={handleLoginSubmit}>
+      <h2>Login</h2>
+      <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="email">Email:</label>
           <input
@@ -80,33 +56,21 @@ const Login = () => {
             required
           />
         </div>
-        {error && <p style={{ color: "red" }}>{error}</p>}
-
+        {error && <p style={{ color: "red" }}>{error}</p>}{" "}
+      
         <p className="register">
-          {isRegistering ? (
-            <>
-              Já possui uma conta?{" "}
-              <span onClick={toggleRegister} style={{ cursor: "pointer", color: "blue" }}>
-                Fazer login
-              </span>
-            </>
-          ) : (
-            <>
-              Não possui uma conta?{" "}
-              <span onClick={toggleRegister} style={{ cursor: "pointer", color: "blue" }}>
-                Cadastrar-se
-              </span>
-            </>
-          )}
+          Não possui uma conta? <Link to={"/register"}>Cadastrar-se</Link>
         </p>
-        <button type="submit">{isRegistering ? "Registrar" : "Entrar"}</button>
+        <button type="submit">Entrar</button>
       </form>
 
       <hr />
-
-      {/* Botão de login com Google */}
       <button className="google" onClick={handleGoogleLogin}>
-        <img src={google} alt="Login com Google" style={{ width: "15px", marginRight: "8px" }} />
+        <img
+          src={google}
+          alt="Login com Google"
+          style={{ width: "15px", marginRight: "8px" }}
+        />
         Login com Google
       </button>
     </div>
