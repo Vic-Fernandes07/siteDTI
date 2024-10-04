@@ -13,8 +13,8 @@ import Home from "./components/home/Home.jsx";
 import Carrinho from "./components/carrinho/Carrinho.jsx";
 import Lookbook from "./components/book/Lookbook.jsx";
 import Register from "./components/register/Register.jsx";
-import Shop from "./components/shop/Shop.jsx"
-
+import Shop from "./components/shop/Shop.jsx";
+import LoginGoogle from "./components/login/LoginGoogle.jsx";
 
 const router = createBrowserRouter([
   {
@@ -35,13 +35,13 @@ const router = createBrowserRouter([
       { path: "/login", element: <Login /> },
       { path: "/carrinho", element: <Carrinho /> },
       { path: "/home", element: <Home /> },
-      { path: "/", element: <Home /> },
-      { path: "/register", element: <Register/> },
-      { path: "/shop", element: <Shop/>}
+      { path: "/register", element: <Register /> },
+      { path: "/shop", element: <Shop /> },
+      { path: "/logingoogle", element: <LoginGoogle /> },
     ],
   },
-]);   
-  
+]);
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <StrictMode>
     <RouterProvider router={router} />

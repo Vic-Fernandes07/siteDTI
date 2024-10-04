@@ -27,7 +27,7 @@ export const Header = () => {
           <Link to={"shop"}>
             <img className="iconeMenu" src={bag} alt="bag icon" />
           </Link>
-          <Link to={"login"}>
+          <Link to={"logingoogle"}>
             <img className="iconeMenu" src={People} alt="Person icon" />
           </Link>
           <Link>
