@@ -6,7 +6,7 @@ import Book from "../../assets/book.png";
 import People from "../../assets/people.png";
 import icon from "../../assets/icon.png";
 import Carrinho from "../../assets/Group.png";
-import bag from "../../assets/bag.png"
+import bag from "../../assets/bag.png";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -34,7 +34,7 @@ export const Header = () => {
             <img className="iconeMenu" src={icon} alt="Notification icon" />
           </Link>
           <Link to={"/carrinho"}>
-            <img className="iconeMenu" src={CarrinhoIcon} alt="Carrinho icon" />
+            <img className="iconeMenu" src={Carrinho} alt="Carrinho icon" />
           </Link>
         </div>
       </div>
