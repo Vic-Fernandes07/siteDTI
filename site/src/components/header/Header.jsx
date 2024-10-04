@@ -5,7 +5,8 @@ import Closet from "../../assets/closet.png";
 import Book from "../../assets/book.png";
 import People from "../../assets/people.png";
 import icon from "../../assets/icon.png";
-import CarrinhoIcon from "../../assets/Group.png";
+import Carrinho from "../../assets/Group.png";
+import bag from "../../assets/bag.png"
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -23,7 +24,10 @@ export const Header = () => {
           <Link to={"/book"}>
             <img className="iconeMenu" src={Book} alt="Book icon" />
           </Link>
-          <Link to={"/login"}>
+          <Link to={"shop"}>
+            <img className="iconeMenu" src={bag} alt="bag icon" />
+          </Link>
+          <Link to={"login"}>
             <img className="iconeMenu" src={People} alt="Person icon" />
           </Link>
           <Link>
