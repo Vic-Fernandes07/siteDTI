@@ -7,19 +7,19 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const Home = () => {
   return (
     <>
-      <div className="row  m-0 p-0 bg-dark text-light divHome">
+      <div className="row  m-0 p-0 text-light divHome">
         <div className="col  m-0 p-0 ">
           <div className="divHomeTitulo">
             <img className="img-fluid" src={Picture} alt="" />
             <br />
-            <h2 className="texto">
+            <h2 className="text-center mt-3">
               Bem-vindos!
               <br />A Dress To Impress fica feliz em te receber👋
             </h2>
           </div>
         </div>
       </div>
-      <div className="row  m-0 p-0 bg-dark text-light">
+      <div className="row  m-0 p-0  text-light">
         <div className="col-12 col-md-6">
           <div className="informacoes">
             <p className="p1">
