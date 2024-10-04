@@ -33,8 +33,8 @@ const Login = () => {
       if (response.status === 200) {
         console.log("Login bem-sucedido:", response.data);
 
-        // Redireciona para a página desejada após o login
-        navigate("/home"); // Substitua pelo caminho correto
+        
+        navigate("/home"); 
       }
     } catch (err) {
       setError("Erro ao fazer login. Tente novamente.");
