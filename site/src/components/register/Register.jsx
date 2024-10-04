@@ -45,7 +45,7 @@ const Register = () => {
   };
 
   return (
-    <div>
+    <div id="registro" className="d-flex">
       <h2>Cadastrar-se</h2>
       <form onSubmit={handleSubmit}>
         <div>
@@ -68,7 +68,7 @@ const Register = () => {
             required
           />
         </div>
-      
+
         <div>
           <label htmlFor="phone">Telefone:</label>
           <input
