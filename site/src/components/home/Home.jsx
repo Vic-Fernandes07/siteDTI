@@ -15,7 +15,7 @@ const Home = () => {
             <h2 className="texto">
               Bem-vindos!
               <br />A Dress To Impress fica feliz em te receber👋
-            </h2>
+            </h2> 
           </div>
         </div>
       </div>
