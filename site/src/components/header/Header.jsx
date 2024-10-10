@@ -13,8 +13,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 export const Header = () => {
   return (
     <>
-      <div className="row m-0 p-0 bg-black text-link-light">
-        <div className="col m-0 p-0">
+      <div className="row m-0 p-0 bg-black text-link-light fixed-top flex-row">
+        <div className="col m-0 p-0 d-flex align-items-center gap-3 ps-4 mt-2 mb-2">
           <Link to={"/"}>
             <img className="iconeMenu" src={home} alt="Home icon" />
           </Link>
@@ -27,7 +27,7 @@ export const Header = () => {
           <Link to={"shop"}>
             <img className="iconeMenu" src={bag} alt="bag icon" />
           </Link>
-          <Link to={"logingoogle"}>
+          <Link to={"login"}>
             <img className="iconeMenu" src={People} alt="Person icon" />
           </Link>
           <Link>

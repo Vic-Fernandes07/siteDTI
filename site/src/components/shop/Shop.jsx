@@ -2,41 +2,45 @@
 import React from 'react';
 import "./Shop.css";
 import tenispreto from "../../assets/tenispreto.png"
+import tenisazul from "../../assets/tenisazul.png"
+import tenisnike from "../../assets/tenisnike.png"
       
 const ProductPage = () => {
   const handleBuyClick = (productName, productPrice) => {
-    alert(`Você está comprando: ${productName} por ${productPrice}. Obrigado por escolher a CAIXA6!`);
+    alert(`Você está comprando: ${productName} por ${productPrice}. Obrigado por escolher a Dress To Impress!`);
   };
-
-  const products = [
-    {            
-  //             id: 'dunk-low-retro',
-  //     title: 'Nike Dunk Low Retro',
-  //     price: 'R$ 799,99',
-  //     img: 'tenispreto.png';
-  //   },
-  //   {
-  //     id: 'dunk-high-retro',
-  //     title: 'Nike Dunk High Retro',
-  //     price: 'R$ 899,99',
-  //     image: 'https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/5e7687f1-c13e-4bac-8ffa-a6f863ae9157/dunk-high-retro-mens-shoe-dTVTCk.png',
-  //   },
-  //   {
-  //     id: 'dunk-low-se',
-  //     title: 'Nike Dunk Low SE',
-  //     price: 'R$ 849,99',
-  //     image: 'https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/32e90c36-d915-4805-894a-c9802a268719/dunk-low-se-mens-shoes-RRcr20.png',
-    },
-   ];
+ 
+        
+      const products = [
+        {
+          id: 'tenis-preto',
+          title: 'Nike Dunk Low Retro',
+          price: 'R$ 799,99',
+          image: tenispreto,
+        },
+        {
+          id: 'dunk-high-retro',
+          title: 'Nike Dunk High Retro',
+          price: 'R$ 899,99',
+          image: tenisazul,
+        },
+        {
+          id: 'dunk-low-se',
+          title: 'Nike AL8 Feminino',
+          price: 'R$ 849,99',
+          image: tenisnike,
+        },
+      ];
+      
 
   return (
     <div>
-      <header>
-        <h1>CAIXA6</h1>
+      <header className='mt-5'>
+        <h1>Dress To Impress</h1>
         <p>Sua loja especializada em moda Dress To Impress</p>
       </header>
       <main>
-        <div className="product-grid">
+        <div className="product-grid ">
           {products.map(product => (
             <div className="product-card" key={product.id}>
               <img src={product.image} alt={product.title} className="product-image" />
