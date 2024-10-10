@@ -30,6 +30,36 @@ const ProductPage = () => {
           price: 'R$ 849,99',
           image: tenisnike,
         },
+        {
+          id: 'camiseta-unissex-nike',
+          title: 'Camiseta Nike SB Max90',
+          price: "R$ 237,49",
+          image: nike,
+        }, 
+        {
+          id: 'cargo- leve', 
+          title: 'Calça cargo leves Balenciaga', 
+          price: 'R$ 400,99', 
+          image: calca, 
+        }, 
+        { 
+          id: 'moletom', 
+          title: 'Moletom masculino Fleece', 
+          price: 'R$ 500,90', 
+          image: moletom, 
+        }, 
+        { 
+          id: 'pochete', 
+          title: 'Palm Angels Pack', 
+          price: 'R$ 259, 99', 
+          image: pochete,
+        },
+        {
+          id: 'camiseta',
+          title: 'Palm Angeles T-shirt', 
+          price: 'R$ 395,90', 
+          image: camiseta,
+        },
       ];
       
 
