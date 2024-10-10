@@ -15,4 +15,4 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app); // Inicializa a autenticação
 const provider = new GoogleAuthProvider(); // Configura o provedor do Google
 
-export { auth, provider, signInWithPopup }; // Exporta os elementos necessários
+export { auth, provider, signInWithPopup };

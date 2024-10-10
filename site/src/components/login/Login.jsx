@@ -1,47 +1,51 @@
-
 import React, { useState } from "react";
-import { auth, provider, signInWithPopup } from "./firebase"; // Importa o Firebase
-import { useNavigate } from "react-router-dom"; // Importa o useNavigate
+import { auth, provider, signInWithPopup } from "./firebase";
 import "./Login.css";
+import { useNavigate } from "react-router-dom";
+
+import axios from "axios";
 import google from "../../assets/google.svg";
 import { Link } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const navigate = useNavigate(); // Inicializa o useNavigate
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError(null);
 
-    // Lógica de autenticação simples (a ser substituída por autenticação real)
-    if (email === "user@example.com" && password === "password123") {
-      alert("Login realizado com sucesso!");
-      setError("");
-      navigate("/profile"); // Redireciona para a página de perfil
-    } else {
-      setError("Credenciais inválidas!");
+    try {
+      const response = await axios.post(
+        "http://exemploapi.somee.com/identity/login",
+        {
+          email,
+          password,
+          useCookies: false,
+          useSessionCookies: false,
+        }
+      );
+
+      if (response.status === 200) {
+        console.log("Login bem-sucedido:", response.data);
+
+        // Redireciona para a página desejada após o login
+        navigate("/home"); // Substitua pelo caminho correto
+      }
+    } catch (err) {
+      setError("Erro ao fazer login. Tente novamente.");
+      console.error(err);
     }
-  };
-
-  // Função para autenticar com Google
-  const handleGoogleLogin = () => {
-    signInWithPopup(auth, provider)
-      .then((result) => {
-        console.log(result.user); // Informações do usuário autenticado
-        alert(`Bem-vindo, ${result.user.displayName}!`);
-      })
-      .catch((error) => {
-        console.error(error);
-        setError("Erro ao autenticar com Google.");
-      });
   };
 
   return (
     <div className="login-container">
       <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleLogin}>
         <div>
           <label htmlFor="email">Email:</label>
           <input
@@ -63,23 +67,23 @@ const Login = () => {
           />
         </div>
         {error && <p style={{ color: "red" }}>{error}</p>}{" "}
-      
         <p className="register">
-          Não possui uma conta? <Link to="/register">Cadastrar-se</Link>
+          Não possui uma conta? <Link to={"/register"}>Cadastrar-se</Link>
         </p>
         <button type="submit">Entrar</button>
       </form>
 
       <hr />
-
-{/* Botão de login com Google */}
-<button className="google" onClick={handleGoogleLogin}>
-        <img src={google} alt="Login com Google" style={{ width: "15px", marginRight: "8px" }} />
+      <button className="google" type="submit">
+        <img
+          src={google}
+          alt="Login com Google"
+          style={{ width: "15px", marginRight: "8px" }}
+        />
         Login com Google
       </button>
     </div>
   );
 };
-
 
 export default Login;

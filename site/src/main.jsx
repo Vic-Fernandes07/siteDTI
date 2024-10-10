@@ -9,10 +9,11 @@ import cabide from "./assets/cabide.png";
 import { element } from "prop-types";
 import Closet from "./components/closet/Closet.jsx";
 import Login from "./components/login/Login.jsx";
-import Book from "./components/book/Lookbook.jsx";
 import Home from "./components/home/Home.jsx";
 import Carrinho from "./components/carrinho/Carrinho.jsx";
 import Lookbook from "./components/book/Lookbook.jsx";
+import Register from "./components/register/Register.jsx";
+import Shop from "./components/shop/Shop.jsx"
 
 
 const router = createBrowserRouter([
@@ -35,10 +36,12 @@ const router = createBrowserRouter([
       { path: "/carrinho", element: <Carrinho /> },
       { path: "/home", element: <Home /> },
       { path: "/", element: <Home /> },
+      { path: "/register", element: <Register/> },
+      { path: "/shop", element: <Shop/>}
     ],
   },
-]);
-
+]);   
+  
 ReactDOM.createRoot(document.getElementById("root")).render(
   <StrictMode>
     <RouterProvider router={router} />
