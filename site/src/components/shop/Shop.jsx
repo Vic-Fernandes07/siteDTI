@@ -1,11 +1,15 @@
-// ProductPage.jsx
 import React from 'react';
-import "./Shop.css";
+import "../shop/Shop.css";
 import tenispreto from "../../assets/tenispreto.png"
 import tenisazul from "../../assets/tenisazul.png"
 import tenisnike from "../../assets/tenisnike.png"
+import camiseta from "../../assets/camisah.png"
+import calca from "../../assets/calca.png"
+import moletom from "../../assets/moletom.png"
+import pochete from "../../assets/pochete.png"
+import nike from "../../assets/nikec.png"
       
-const ProductPage = () => {
+const Shop = () => {
   const handleBuyClick = (productName, productPrice) => {
     alert(`Você está comprando: ${productName} por ${productPrice}. Obrigado por escolher a Dress To Impress!`);
   };
@@ -15,7 +19,7 @@ const ProductPage = () => {
         {
           id: 'tenis-preto',
           title: 'Nike Dunk Low Retro',
-          price: 'R$ 799,99',
+          price: 'R$ 799,90',
           image: tenispreto,
         },
         {
@@ -67,7 +71,7 @@ const ProductPage = () => {
     <div>
       <header className='mt-5'>
         <h1>Dress To Impress</h1>
-        <p>Sua loja especializada em moda!</p>
+        <p>Sua loja especializada em moda !</p>
       </header>
       <main>
         <div className="product-grid ">
@@ -92,4 +96,4 @@ const ProductPage = () => {
   );
 };
 
-export default ProductPage;
+export default Shop;
