@@ -32,8 +32,7 @@ const Login = () => {
       if (response.status === 200) {
         console.log("Login bem-sucedido:", response.data);
 
-        
-        navigate("/home"); 
+        navigate("/home");
       }
     } catch (err) {
       setError("Erro ao fazer login. Tente novamente.");
