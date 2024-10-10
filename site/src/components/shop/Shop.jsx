@@ -35,12 +35,12 @@ const ProductPage = () => {
 
   return (
     <div>
-      <header>
+      <header className='mt-5'>
         <h1>Dress To Impress</h1>
         <p>Sua loja especializada em moda Dress To Impress</p>
       </header>
       <main>
-        <div className="product-grid">
+        <div className="product-grid ">
           {products.map(product => (
             <div className="product-card" key={product.id}>
               <img src={product.image} alt={product.title} className="product-image" />
