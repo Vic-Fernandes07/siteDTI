@@ -13,3 +13,7 @@
 .login-button {
   margin-top: 20px;
 }
+
+.text-light{
+  color: var(--corTexto) !important;
+}

@@ -3,9 +3,22 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 :root {
-  background-color: #242424;
+  --bgColor: #ababab;
+  --corTexto:#000
+  /* background-color: #242424; */
+}
+
+@media (prefers-color-scheme: dark){
+  :root {
+    --bgColor: #000;
+    --corTexto:#fff
+    /* background-color: #242424; */
+  }
+}
+
+body{
+  background: var(--bgColor) !important;
 }
 
 .texto {

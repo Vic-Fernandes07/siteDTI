@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { auth, provider, signInWithPopup } from "./firebase";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
-
 import axios from "axios";
 import google from "../../assets/google.svg";
 import { Link } from "react-router-dom";
@@ -33,8 +32,7 @@ const Login = () => {
       if (response.status === 200) {
         console.log("Login bem-sucedido:", response.data);
 
-        // Redireciona para a página desejada após o login
-        navigate("/home"); // Substitua pelo caminho correto
+        navigate("/home");
       }
     } catch (err) {
       setError("Erro ao fazer login. Tente novamente.");
