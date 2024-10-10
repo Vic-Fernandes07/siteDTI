@@ -19,7 +19,7 @@ const Shop = () => {
         {
           id: 'tenis-preto',
           title: 'Nike Dunk Low Retro',
-          price: 'R$ 799,99',
+          price: 'R$ 799,90',
           image: tenispreto,
         },
         {
