@@ -37,7 +37,7 @@ const ProductPage = () => {
     <div>
       <header className='mt-5'>
         <h1>Dress To Impress</h1>
-        <p>Sua loja especializada em moda Dress To Impress</p>
+        <p>Sua loja especializada em moda!</p>
       </header>
       <main>
         <div className="product-grid ">
