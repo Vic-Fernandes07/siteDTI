@@ -1,7 +1,7 @@
 import React from "react";
 import "./Carrinho.css";
 
-function Carrinho({ itens, removerItem }) {
+function Carrinho({ itens = [], removerItem }) {
   const total = itens.reduce((acc, item) => acc + item.preco, 0);
 
   return (
