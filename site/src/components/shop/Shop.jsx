@@ -29,7 +29,7 @@ const Shop = () => {
           image: tenisazul,
         },
         {
-          id: 'dunk-low-se',
+          id: 'dunk-low-se', 
           title: 'Nike AL8 Feminino',
           price: 'R$ 849,99',
           image: tenisnike,
