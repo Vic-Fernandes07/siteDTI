@@ -30,7 +30,7 @@ export const Header = () => {
         </div>
 
         <div className="col-2 d-flex justify-content-end align-items-center gap-3 pe-4">
-          <Link to={"login"}>
+          <Link to={"logingoogle"}>
             <img className="iconeMenu" src={People} alt="Person icon" />
           </Link>
           <Link>
