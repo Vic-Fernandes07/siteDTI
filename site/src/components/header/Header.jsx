@@ -61,7 +61,7 @@ export const Header = () => {
               <img className="iconeMenu" src={People} alt="Login icon" />
             </Link>
           )}
-          <Link>
+          <Link to={"notificacao"}>
             <img className="iconeMenu" src={icon} alt="Notification icon" />
           </Link>
           <Link to={"/carrinho"}>
