@@ -27,13 +27,14 @@ const Lookbook = () => {
       <h1>Lookbook</h1>
       <div className="lookbook-box">
         <form onSubmit={handleSubmit} className="upload-form">
-          <input
-            type="file"
-            accept="image/*"
-            onChange={handleImageChange}
-            required
+        <input 
+            type="file" 
+            id="file-input"
+            onChange={handleImageChange} 
+            style={{ display: 'none' }} 
           />
-          <button type="submit">Postar Look</button>
+          <label htmlFor="file-input" className="file-label">Selecionar Roupa</label>
+          <button type="submit" className="">Postar Look</button>
         </form>
         <div className="photo-feed">
           {photos.map((photo, index) => (
