@@ -4,31 +4,59 @@ import './Profile.css';
 const Profile = () => {
   const availableStyles = ['Casual', 'Elegante', 'Esportivo', 'Streetwear', 'Sport Fino', 'Boho', 'Vintage'];
   const [isEditing, setIsEditing] = useState(false);
+  const [errors, setErrors] = useState({ username: '', name: '' });
   const [userData, setUserData] = useState({
-    username: 'Username',
-    bio: 'Biografia',
-    name: 'Nome',
+    username: 'mariasilvabr',
+    bio: 'Explorando o mundo, uma foto de cada vez 📸🌍',
+    name: 'Maria Silva',
     age: 28,
-    location: 'Localização',
-    profession: 'Profissão',
-    style: 'Casual' // Defina o estilo inicial
+    location: 'São Paulo, Brasil',
+    profession: 'Fotógrafa Freelancer',
+    selectedStyles: ['Casual'], // Inicializa com um estilo selecionado
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUserData((prevState) => ({
       ...prevState,
-      [name]: value
+      [name]: value,
     }));
   };
 
-  const toggleEditing = () => {
-    setIsEditing(!isEditing);
+  const validateFields = () => {
+    let valid = true;
+    let newErrors = { username: '', name: '' };
+
+    if (userData.username.trim().length < 3) {
+      newErrors.username = 'O nome de usuário deve ter pelo menos 3 caracteres.';
+      valid = false;
+    }
+
+    if (userData.name.trim().length < 3) {
+      newErrors.name = 'O nome deve ter pelo menos 3 caracteres.';
+      valid = false;
+    }
+
+    setErrors(newErrors);
+    return valid;
   };
 
   const handleSave = () => {
-    // Lógica para salvar os dados (ex: enviar para um backend)
-    setIsEditing(false);
+    if (validateFields()) {
+      // Lógica para salvar os dados (ex: enviar para um backend)
+      setIsEditing(false);
+    }
+  };
+
+  const toggleStyle = (style) => {
+    if (!isEditing) return; // Apenas altera o estilo se o modo de edição estiver ativo
+    setUserData((prevState) => {
+      const alreadySelected = prevState.selectedStyles.includes(style);
+      const newStyles = alreadySelected
+        ? prevState.selectedStyles.filter((s) => s !== style)
+        : [...prevState.selectedStyles, style];
+      return { ...prevState, selectedStyles: newStyles };
+    });
   };
 
   return (
@@ -36,13 +64,16 @@ const Profile = () => {
       <div className="profile-header">
         <img src="/path/to/profile-pic.jpg" alt="Profile" className="profile-pic" />
         {isEditing ? (
-          <input
-            type="text"
-            name="username"
-            value={userData.username}
-            onChange={handleChange}
-            className="edit-input"
-          />
+          <>
+            <input
+              type="text"
+              name="username"
+              value={userData.username}
+              onChange={handleChange}
+              className="edit-input"
+            />
+            {errors.username && <p className="error-text">{errors.username}</p>}
+          </>
         ) : (
           <h2>@{userData.username}</h2>
         )}
@@ -64,13 +95,16 @@ const Profile = () => {
         <p>
           <strong>Nome:</strong>{' '}
           {isEditing ? (
-            <input
-              type="text"
-              name="name"
-              value={userData.name}
-              onChange={handleChange}
-              className="edit-input"
-            />
+            <>
+              <input
+                type="text"
+                name="name"
+                value={userData.name}
+                onChange={handleChange}
+                className="edit-input"
+              />
+              {errors.name && <p className="error-text">{errors.name}</p>}
+            </>
           ) : (
             userData.name
           )}
@@ -120,24 +154,32 @@ const Profile = () => {
       </div>
 
       <div className="profile-style">
-        <h3>Preferência de Estilo</h3>
+        <h3>Preferências de Estilo</h3>
         {isEditing ? (
-          <select
-            name="style"
-            value={userData.style}
-            onChange={handleChange}
-            className="edit-input"
-          >
-            {availableStyles.map((style, index) => (
-              <option key={index} value={style}>
+          <div className="style-options">
+            {availableStyles.map((style) => (
+              <button
+                key={style}
+                type="button"
+                className={`style-btn ${userData.selectedStyles.includes(style) ? 'selected' : ''}`}
+                onClick={() => toggleStyle(style)}
+              >
                 {style}
-              </option>
+              </button>
             ))}
-          </select>
+          </div>
         ) : (
-          <p>
-            <strong>Estilo:</strong> {userData.style}
-          </p>
+          <div className="selected-styles">
+            {userData.selectedStyles.length > 0 ? (
+              userData.selectedStyles.map((style) => (
+                <span key={style} className="style-badge">
+                  {style}
+                </span>
+              ))
+            ) : (
+              <p>Nenhum estilo selecionado.</p>
+            )}
+          </div>
         )}
       </div>
 
@@ -146,7 +188,7 @@ const Profile = () => {
           Salvar
         </button>
       ) : (
-        <button className="edit-profile-btn" onClick={toggleEditing}>
+        <button className="edit-profile-btn" onClick={() => setIsEditing(true)}>
           Editar Perfil
         </button>
       )}
