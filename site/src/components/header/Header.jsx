@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Header.css";
 import home from "../../assets/home.png";
 import Closet from "../../assets/closet.png";
@@ -9,8 +9,24 @@ import Carrinho from "../../assets/Group.png";
 import bag from "../../assets/bag.png";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { getAuth, onAuthStateChanged } from "firebase/auth"; // Import Firebase Auth
 
 export const Header = () => {
+  const [user, setUser] = useState(null);
+
+  // Verifica se o usuário está logado
+  useEffect(() => {
+    const auth = getAuth();
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUser(user); // Atualiza o estado com as informações do usuário logado
+      } else {
+        setUser(null); // Reseta o estado se o usuário fizer logout
+      }
+    });
+    return () => unsubscribe(); // Limpa o listener ao desmontar o componente
+  }, []);
+
   return (
     <>
       <div className="row m-0 p-0 bg-black text-link-light fixed-top flex-row">
@@ -30,9 +46,21 @@ export const Header = () => {
         </div>
 
         <div className="col-2 d-flex justify-content-end align-items-center gap-3 pe-4">
-          <Link to={"logingoogle"}>
-            <img className="iconeMenu" src={People} alt="Person icon" />
-          </Link>
+          {user ? (
+            // Se o usuário estiver logado, mostrar a foto de perfil e link para perfil
+            <Link to={"/perfil"}>
+              <img
+                className="iconeMenu profile-picture"
+                src={user.photoURL || People} // Usa a foto do perfil ou o ícone "People" como fallback
+                alt="Profile icon"
+              />
+            </Link>
+          ) : (
+            // Se não estiver logado, mostrar o ícone de login
+            <Link to={"logingoogle"}>
+              <img className="iconeMenu" src={People} alt="Login icon" />
+            </Link>
+          )}
           <Link>
             <img className="iconeMenu" src={icon} alt="Notification icon" />
           </Link>

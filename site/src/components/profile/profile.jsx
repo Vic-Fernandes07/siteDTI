@@ -1,16 +1,14 @@
 import React, { useState } from "react";
-import "./Profile.css"; 
+import "./profile.css"; 
 
 const Profile = () => {
   const [bio, setBio] = useState("");
   const [profilePic, setProfilePic] = useState("");
 
-  // Função para lidar com a atualização da biografia
   const handleBioChange = (event) => {
     setBio(event.target.value);
   };
 
-  // Função para lidar com a atualização da foto de perfil
   const handleProfilePicChange = (event) => {
     const file = event.target.files[0];
     if (file) {
@@ -25,9 +23,16 @@ const Profile = () => {
   return (
     <div className="profile-container">
       <h2>Meu Perfil</h2>
-      {profilePic && <img src={profilePic} alt="Perfil" className="profile-pic" />}
-      <input type="file" onChange={handleProfilePicChange} />
-      <div>
+      {profilePic && (
+        <div className="preview-section">
+          <img src={profilePic} alt="Perfil" className="image-preview" />
+        </div>
+      )}
+      <div className="form-group">
+        <label htmlFor="profilePic">Carregar Foto de Perfil:</label>
+        <input type="file" id="profilePic" onChange={handleProfilePicChange} />
+      </div>
+      <div className="form-group">
         <label htmlFor="bio">Biografia:</label>
         <textarea
           id="bio"
@@ -36,6 +41,9 @@ const Profile = () => {
           placeholder="Escreva sua biografia aqui..."
         />
       </div>
+      <button onClick={() => {/* Lógica para salvar o perfil */}}>
+        Salvar Perfil
+      </button>
     </div>
   );
 };

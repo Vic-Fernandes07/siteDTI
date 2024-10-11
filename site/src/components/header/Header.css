@@ -3,6 +3,14 @@
 }
 
 .iconeMenu {
-  /* margin: 10px 20px; */
+ margin: 10px 20px; 
   height: 1.5em;
+}
+
+/* Estilo para a foto de perfil */
+.profile-picture {
+  width: 40px; /* Ajuste conforme o tamanho que preferir */
+  height: 40px; /* Mesmo tamanho para manter a proporção */
+  border-radius: 50%; /* Deixa a imagem redonda */
+  object-fit: cover; /* Garante que a imagem seja exibida corretamente */
 }
