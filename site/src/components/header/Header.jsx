@@ -9,7 +9,7 @@ import Carrinho from "../../assets/Group.png";
 import bag from "../../assets/bag.png";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { getAuth, onAuthStateChanged } from "firebase/auth"; // Import Firebase Auth
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 export const Header = () => {
   const [user, setUser] = useState(null);
@@ -28,48 +28,44 @@ export const Header = () => {
   }, []);
 
   return (
-    <>
-      <div className="row m-0 p-0 bg-black text-link-light fixed-top flex-row">
-        <div className="col m-0 p-0 d-flex align-items-center gap-3 ps-4 mt-2 mb-2">
-          <Link to={"/"}>
-            <img className="iconeMenu" src={home} alt="Home icon" />
-          </Link>
-          <Link to={"/closet"}>
-            <img className="iconeMenu" src={Closet} alt="Closet icon" />
-          </Link>
-          <Link to={"/book"}>
-            <img className="iconeMenu" src={Book} alt="Book icon" />
-          </Link>
-          <Link to={"shop"}>
-            <img className="iconeMenu" src={bag} alt="bag icon" />
-          </Link>
-        </div>
-
-        <div className="col-2 d-flex justify-content-end align-items-center gap-3 pe-4">
-          {user ? (
-            // Se o usuário estiver logado, mostrar a foto de perfil e link para perfil
-            <Link to={"/perfil"}>
-              <img
-                className="iconeMenu profile-picture"
-                src={user.photoURL || People} // Usa a foto do perfil ou o ícone "People" como fallback
-                alt="Profile icon"
-              />
-            </Link>
-          ) : (
-            // Se não estiver logado, mostrar o ícone de login
-            <Link to={"logingoogle"}>
-              <img className="iconeMenu" src={People} alt="Login icon" />
-            </Link>
-          )}
-          <Link to={"notificacao"}>
-            <img className="iconeMenu" src={icon} alt="Notification icon" />
-          </Link>
-          <Link to={"/carrinho"}>
-            <img className="iconeMenu" src={Carrinho} alt="Carrinho icon" />
-          </Link>
-        </div>
+    <div className="row m-0 p-0 bg-black text-link-light fixed-top flex-row">
+      <div className="col m-0 p-0 d-flex align-items-center gap-3 ps-4 mt-2 mb-2">
+        <Link to="/">
+          <img className="iconeMenu" src={home} alt="Ícone de Home" />
+        </Link>
+        <Link to="/closet">
+          <img className="iconeMenu" src={Closet} alt="Ícone de Closet" />
+        </Link>
+        <Link to="/book">
+          <img className="iconeMenu" src={Book} alt="Ícone de Book" />
+        </Link>
+        <Link to="/shop">
+          <img className="iconeMenu" src={bag} alt="Ícone de Bag" />
+        </Link>
       </div>
-    </>
+
+      <div className="col-2 d-flex justify-content-end align-items-center gap-3 pe-4">
+        {user ? (
+          <Link to="/perfil">
+            <img
+              className="iconeMenu profile-picture"
+              src={user.photoURL || People} // Usa a foto do perfil ou o ícone "People" como fallback
+              alt="Ícone de Perfil"
+            />
+          </Link>
+        ) : (
+          <Link to="/logingoogle">
+            <img className="iconeMenu" src={People} alt="Ícone de Login" />
+          </Link>
+        )}
+        <Link>
+          <img className="iconeMenu" src={icon} alt="Ícone de Notificações" />
+        </Link>
+        <Link to="/carrinho">
+          <img className="iconeMenu" src={Carrinho} alt="Ícone de Carrinho" />
+        </Link>
+      </div>
+    </div>
   );
 };
 
