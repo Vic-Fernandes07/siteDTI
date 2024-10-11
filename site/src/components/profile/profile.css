@@ -92,13 +92,13 @@
 }
 
 .profile-header h2 {
-    color: #4a90e2;
+    color: #000000;
     font-size: 24px;
     margin: 5px 0;
 }
 
 .profile-bio {
-    color: #555;
+    color: #000000;
     font-style: italic;
 }
 
@@ -123,7 +123,7 @@
 
 .profile-style h3 {
     font-size: 18px;
-    color: #4a90e2;
+    color: #000000;
     margin-bottom: 10px;
 }
 
@@ -136,27 +136,27 @@
 
 .style-btn {
     padding: 8px 12px;
-    border: 1px solid #4a90e2;
+    border: 1px solid #000000;
     border-radius: 20px;
     background-color: white;
-    color: #4a90e2;
+    color: #000000;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .style-btn.selected {
-    background-color: #4a90e2;
-    color: white;
+    background-color: #000000;
+    color: rgb(255, 255, 255);
 }
 
 .style-btn:hover {
-    background-color: #357abd;
+    background-color: #454545;
     color: white;
 }
 
 .edit-profile-btn,
 .save-profile-btn {
-    background-color: #4a90e2;
+    background-color: #000000;
     color: white;
     border: none;
     border-radius: 5px;
@@ -168,7 +168,7 @@
 
 .edit-profile-btn:hover,
 .save-profile-btn:hover {
-    background-color: #357abd;
+    background-color: #454545;
 }
 
 .edit-input {
@@ -190,7 +190,7 @@
 }
 
 .style-badge {
-    background-color: #4a90e2;
+    background-color: #7046be;
     color: white;
     border-radius: 5px;
     padding: 5px 10px;
