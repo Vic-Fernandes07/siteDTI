@@ -45,5 +45,4 @@ function Carrinho({ itens = [], removerItem }) {
   );
 };
 
-export default ProductPage;
-""
+export default Carrinho;

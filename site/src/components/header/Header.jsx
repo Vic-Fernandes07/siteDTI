@@ -27,8 +27,9 @@ export const Header = () => {
           <Link to={"shop"}>
             <img className="iconeMenu" src={bag} alt="bag icon" />
           </Link>
+        </div>
 
-          
+        <div className="col-2 d-flex justify-content-end align-items-center gap-3 pe-4">
           <Link to={"login"}>
             <img className="iconeMenu" src={People} alt="Person icon" />
           </Link>
