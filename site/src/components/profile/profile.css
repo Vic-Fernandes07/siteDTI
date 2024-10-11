@@ -127,6 +127,33 @@
     margin-bottom: 10px;
 }
 
+.style-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.style-btn {
+    padding: 8px 12px;
+    border: 1px solid #4a90e2;
+    border-radius: 20px;
+    background-color: white;
+    color: #4a90e2;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.style-btn.selected {
+    background-color: #4a90e2;
+    color: white;
+}
+
+.style-btn:hover {
+    background-color: #357abd;
+    color: white;
+}
+
 .edit-profile-btn,
 .save-profile-btn {
     background-color: #4a90e2;
@@ -151,4 +178,23 @@
     width: 100%;
     margin-top: 5px;
 }
+<<<<<<< HEAD
 >>>>>>> de031de (profile deu bom)
+=======
+
+.selected-styles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.style-badge {
+    background-color: #4a90e2;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+    display: inline-block;
+}
+>>>>>>> 4ff1b93 (profile gg)
