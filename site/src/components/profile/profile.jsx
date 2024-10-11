@@ -5,12 +5,12 @@ const Profile = () => {
   const availableStyles = ['Casual', 'Elegante', 'Esportivo', 'Streetwear', 'Sport Fino', 'Boho', 'Vintage'];
   const [isEditing, setIsEditing] = useState(false);
   const [userData, setUserData] = useState({
-    username: 'mariasilvabr',
-    bio: 'Explorando o mundo, uma foto de cada vez 📸 🌍',
-    name: 'Maria Silva',
+    username: 'Username',
+    bio: 'Biografia',
+    name: 'Nome',
     age: 28,
-    location: 'São Paulo, Brasil',
-    profession: 'Fotógrafa Freelancer',
+    location: 'Localização',
+    profession: 'Profissão',
     style: 'Casual' // Defina o estilo inicial
   });
 
