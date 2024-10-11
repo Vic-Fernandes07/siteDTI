@@ -25,7 +25,7 @@ const LoginGoogle = () => {
       .then((result) => {
         console.log(result.user); // Informações do usuário autenticado
         // alert(`Bem-vindo, ${result.user.displayName}!`);
-        navigate("/home");
+        navigate("/");
       })
       .catch((error) => {
         console.error(error);
@@ -58,11 +58,11 @@ const LoginGoogle = () => {
         </div>
         {error && <p style={{ color: "red" }}>{error}</p>}{" "}
         {/* Exibe erro se houver */}
-        <button type="submit">Entrar</button>
+        <button className="m-0" type="submit">Entrar</button>
       </form>
       <hr />
       {/* Botão de login com Google */}
-      <button className="google" onClick={handleGoogleLogin}>
+      <button className="google m-0" onClick={handleGoogleLogin}>
         <img
           src={google}
           alt="Login com Google"

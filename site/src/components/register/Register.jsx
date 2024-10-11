@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import "./Register.css"
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -44,7 +45,7 @@ const Register = () => {
   };
 
   return (
-    <div>
+    <div id="registro" className="d-flex">
       <h2>Cadastrar-se</h2>
       <form onSubmit={handleSubmit}>
         <div>
@@ -67,7 +68,7 @@ const Register = () => {
             required
           />
         </div>
-      
+
         <div>
           <label htmlFor="phone">Telefone:</label>
           <input
