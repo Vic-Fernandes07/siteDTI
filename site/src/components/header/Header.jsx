@@ -44,31 +44,30 @@ export const Header = () => {
         </Link>
       </div>
 
-        <div className="col-2 d-flex justify-content-end align-items-center gap-3 pe-4">
-          {user ? (
-            // Se o usuário estiver logado, mostrar a foto de perfil e link para perfil
-            <Link to={"/perfil"}>
-              <img
-                className="iconeMenu profile-picture"
-                src={user.photoURL || People} // Usa a foto do perfil ou o ícone "People" como fallback
-                alt="Profile icon"
-              />
-            </Link>
-          ) : (
-            // Se não estiver logado, mostrar o ícone de login
-            <Link to={"logingoogle"}>
-              <img className="iconeMenu" src={People} alt="Login icon" />
-            </Link>
-          )}
-          <Link>
-            <img className="iconeMenu" src={icon} alt="Notification icon" />
+      <div className="col-2 d-flex justify-content-end align-items-center gap-3 pe-4">
+        {user ? (
+          // Se o usuário estiver logado, mostrar a foto de perfil e link para perfil
+          <Link to="/perfil">
+            <img
+              className="iconeMenu profile-picture"
+              src={user.photoURL || People} // Usa a foto do perfil ou o ícone "People" como fallback
+              alt="Profile icon"
+            />
           </Link>
-          <Link to={"/carrinho"}>
-            <img className="iconeMenu" src={Carrinho} alt="Carrinho icon" />
+        ) : (
+          // Se não estiver logado, mostrar o ícone de login
+          <Link to="/logingoogle">
+            <img className="iconeMenu" src={People} alt="Login icon" />
           </Link>
-        </div>
+        )}
+        <Link to="/notifications">
+          <img className="iconeMenu" src={icon} alt="Notification icon" />
+        </Link>
+        <Link to="/carrinho">
+          <img className="iconeMenu" src={Carrinho} alt="Carrinho icon" />
+        </Link>
       </div>
-    </>
+    </div>
   );
 };
 
