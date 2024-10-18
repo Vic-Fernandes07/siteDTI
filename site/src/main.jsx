@@ -14,7 +14,8 @@ import Register from "./components/register/Register.jsx";
 import Shop from "./components/shop/Shop.jsx";
 import LoginGoogle from "./components/login/LoginGoogle.jsx";
 import Carrinho from "./components/carrinho/Carrinho.jsx";
-import Profile from "./components/profile/profile.jsx"; 
+import Perfil from "./components/perfil/Perfil.jsx";
+import Profile from "./components/profile/profile.jsx";
 
 
 const router = createBrowserRouter([
@@ -39,6 +40,7 @@ const router = createBrowserRouter([
       { path: "/register", element: <Register /> },
       { path: "/shop", element: <Shop /> },
       { path: "/perfil", element: <Perfil /> },
+      // { path: "/perfil", element: <Perfil /> },
       { path: "/logingoogle", element: <LoginGoogle /> },
       { path: "/perfil", element: <Profile /> },
 

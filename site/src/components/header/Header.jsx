@@ -10,6 +10,7 @@ import bag from "../../assets/bag.png";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 export const Header = () => {
   const [user, setUser] = useState(null);
@@ -72,3 +73,4 @@ export const Header = () => {
 };
 
 export default Header;
+
