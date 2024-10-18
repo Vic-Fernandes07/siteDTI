@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import './Profile.css';
+import React, { useState } from "react";
+import "./profile.css"; 
 
 const Profile = () => {
   const availableStyles = ['Casual', 'Elegante', 'Esportivo', 'Streetwear', 'Sport Fino', 'Boho', 'Vintage'];
@@ -57,6 +57,13 @@ const Profile = () => {
         : [...prevState.selectedStyles, style];
       return { ...prevState, selectedStyles: newStyles };
     });
+  };
+
+  const handleLogout = () => {
+    // Lógica de logout aqui (exemplo genérico)
+    console.log("Usuário saiu");
+    // Aqui você pode redirecionar o usuário para a página de login, por exemplo
+    // window.location.href = "/login";
   };
 
   return (
@@ -182,16 +189,9 @@ const Profile = () => {
           </div>
         )}
       </div>
-
-      {isEditing ? (
-        <button className="save-profile-btn" onClick={handleSave}>
-          Salvar
-        </button>
-      ) : (
-        <button className="edit-profile-btn" onClick={() => setIsEditing(true)}>
-          Editar Perfil
-        </button>
-      )}
+      <button onClick={() => {/* Lógica para salvar o perfil */}}>
+        Salvar Perfil
+      </button>
     </div>
   );
 };

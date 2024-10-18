@@ -15,7 +15,7 @@ const Home = () => {
             <h2 className="text-center mt-3">
               Bem-vindos!
               <br />A Dress To Impress fica feliz em te receber👋
-            </h2> 
+            </h2>
           </div>
         </div>
       </div>
@@ -79,11 +79,13 @@ const Home = () => {
         <div className="col-12 col-md"></div>
         <div className="col-12 col-md-5">
           {/* Box para o botão de login */}
-          <div className="facalogin">
-            <h3>Faça login ou crie sua conta aqui:</h3>
-            <Link to="/login">
-              <button className="login-button">Login</button>
-            </Link>
+          <div className="box-container">
+            <div className="facalogin">
+              <h3>Faça login ou crie sua conta aqui:</h3>
+              <Link to="/login">
+                <button className="login-button">Login</button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
