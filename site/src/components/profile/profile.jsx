@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 import React, { useState } from 'react';
 import './Profile.css';
+=======
+import React, { useState } from "react";
+import "./profile.css";
+>>>>>>> origin/vitoria
 
 const Profile = () => {
   const availableStyles = ['Casual', 'Elegante', 'Esportivo', 'Streetwear', 'Sport Fino', 'Boho', 'Vintage'];
@@ -57,6 +62,13 @@ const Profile = () => {
         : [...prevState.selectedStyles, style];
       return { ...prevState, selectedStyles: newStyles };
     });
+  };
+
+  const handleLogout = () => {
+    // Lógica de logout aqui (exemplo genérico)
+    console.log("Usuário saiu");
+    // Aqui você pode redirecionar o usuário para a página de login, por exemplo
+    // window.location.href = "/login";
   };
 
   return (
@@ -192,7 +204,27 @@ const Profile = () => {
           Editar Perfil
         </button>
       )}
+<<<<<<< HEAD
     </div>
+=======
+      <div className="form-group">
+        <label htmlFor="profilePic">Carregar Foto de Perfil:</label>
+        <input type="file" id="profilePic" onChange={handleProfilePicChange} />
+      </div>
+      <div className="form-group">
+        <label htmlFor="bio">Biografia:</label>
+        <textarea
+          id="bio"
+          value={bio}
+          onChange={handleBioChange}
+          placeholder="Escreva sua biografia aqui..."
+        />
+      </div>
+      <button onClick={() => {/* Lógica para salvar o perfil */}}>
+        Salvar Perfil
+      </button>
+    </div>    
+>>>>>>> origin/vitoria
   );
 };
 

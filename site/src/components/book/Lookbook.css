@@ -21,7 +21,7 @@
   ; /* Cor de fundo da caixinha */
   border-radius: 10px; /* Bordas arredondadas */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra da caixinha */
-  padding: 50px;
+  padding: 80px;
 }
 
 .upload-form {
