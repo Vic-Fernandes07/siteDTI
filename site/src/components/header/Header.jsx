@@ -60,15 +60,13 @@ export const Header = () => {
               <img className="iconeMenu" src={People} alt="Login icon" />
             </Link>
           )}
-          <Link>
-            <img className="iconeMenu" src={icon} alt="Notification icon" />
-          </Link>
+        
           <Link to={"/carrinho"}>
             <img className="iconeMenu" src={Carrinho} alt="Carrinho icon" />
           </Link>
         </div>
       </div>
-    </>
+    
   );
 };
 
