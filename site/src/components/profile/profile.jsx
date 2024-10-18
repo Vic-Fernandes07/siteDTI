@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { useState } from 'react';
 import './Profile.css';
 
@@ -224,5 +223,3 @@ const Profile = () => {
 };
 
 export default Profile;
-=======
->>>>>>> 4cf779b (att)
