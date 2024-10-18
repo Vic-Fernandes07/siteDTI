@@ -28,6 +28,7 @@ export const Header = () => {
   }, []);
 
   return (
+
     <div className="row m-0 p-0 bg-black text-link-light fixed-top flex-row">
       <div className="col m-0 p-0 d-flex align-items-center gap-3 ps-4 mt-2 mb-2">
         <Link to="/">
@@ -44,11 +45,10 @@ export const Header = () => {
         </Link>
       </div>
 
-<<<<<<< HEAD
       <div className="col-2 d-flex justify-content-end align-items-center gap-3 pe-4">
         {user ? (
           // Se o usuário estiver logado, mostrar a foto de perfil e link para perfil
-          <Link to="/perfil">
+          <Link to={"/perfil"}>
             <img
               className="iconeMenu profile-picture"
               src={user.photoURL || People} // Usa a foto do perfil ou o ícone "People" como fallback
@@ -57,31 +57,15 @@ export const Header = () => {
           </Link>
         ) : (
           // Se não estiver logado, mostrar o ícone de login
-          <Link to="/logingoogle">
+          <Link to={"logingoogle"}>
             <img className="iconeMenu" src={People} alt="Login icon" />
-=======
-        <div className="col-2 d-flex justify-content-end align-items-center gap-3 pe-4">
-          {user ? (
-            // Se o usuário estiver logado, mostrar a foto de perfil e link para perfil
-            <Link to={"/perfil"}>
-              <img
-                className="iconeMenu profile-picture"
-                src={user.photoURL || People} // Usa a foto do perfil ou o ícone "People" como fallback
-                alt="Profile icon"
-              />
-            </Link>
-          ) : (
-            // Se não estiver logado, mostrar o ícone de login
-            <Link to={"logingoogle"}>
-              <img className="iconeMenu" src={People} alt="Login icon" />
-            </Link>
-          )}
-        
-          <Link to={"/carrinho"}>
-            <img className="iconeMenu" src={Carrinho} alt="Carrinho icon" />
->>>>>>> origin/sophia
           </Link>
         )}
+
+        <Link to={"/carrinho"}>
+          <img className="iconeMenu" src={Carrinho} alt="Carrinho icon" />
+        </Link>
+
         <Link to="/notifications">
           <img className="iconeMenu" src={icon} alt="Notification icon" />
         </Link>
@@ -89,11 +73,8 @@ export const Header = () => {
           <img className="iconeMenu" src={Carrinho} alt="Carrinho icon" />
         </Link>
       </div>
-<<<<<<< HEAD
     </div>
-=======
-    
->>>>>>> origin/sophia
+
   );
 };
 

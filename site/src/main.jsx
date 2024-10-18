@@ -14,11 +14,6 @@ import Register from "./components/register/Register.jsx";
 import Shop from "./components/shop/Shop.jsx";
 import LoginGoogle from "./components/login/LoginGoogle.jsx";
 import Carrinho from "./components/carrinho/Carrinho.jsx";
-<<<<<<< HEAD
-import Notificacao from "./components/notificacao/Notificacao.jsx"
-=======
-
->>>>>>> origin/sophia
 
 const router = createBrowserRouter([
   {
@@ -42,11 +37,6 @@ const router = createBrowserRouter([
       { path: "/register", element: <Register /> },
       { path: "/shop", element: <Shop /> },
       { path: "/logingoogle", element: <LoginGoogle /> },
-<<<<<<< HEAD
-      { path: "/notificacao", element: <Notificacao />}
-=======
-      
->>>>>>> origin/sophia
     ],
   },
 ]);
