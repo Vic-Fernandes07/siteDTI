@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import "../shop/Shop.css";
 import tenispreto from "../../assets/tenispreto.png";
 import tenisazul from "../../assets/tenisazul.png";
-import tenisnike from "../../assets/tenisnike.png";
+import tenisnike from "../../assets/tenisnike.png";    
 import calca from "../../assets/calca.png";
 import camiseta from "../../assets/camisah.png";
 import moletom from "../../assets/moletom.png";

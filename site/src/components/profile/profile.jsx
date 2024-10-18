@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React, { useState } from 'react';
 import './Profile.css';
 =======
@@ -229,3 +230,5 @@ const Profile = () => {
 };
 
 export default Profile;
+=======
+>>>>>>> origin/sophia
