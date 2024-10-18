@@ -14,7 +14,10 @@ import Register from "./components/register/Register.jsx";
 import Shop from "./components/shop/Shop.jsx";
 import LoginGoogle from "./components/login/LoginGoogle.jsx";
 import Carrinho from "./components/carrinho/Carrinho.jsx";
+<<<<<<< HEAD
 import Profile from "./components/profile/profile.jsx"; 
+=======
+>>>>>>> 4cf779b (att)
 
 
 const router = createBrowserRouter([
@@ -39,8 +42,12 @@ const router = createBrowserRouter([
       { path: "/register", element: <Register /> },
       { path: "/shop", element: <Shop /> },
       { path: "/logingoogle", element: <LoginGoogle /> },
+<<<<<<< HEAD
       { path: "/perfil", element: <Profile /> },
 
+=======
+      
+>>>>>>> 4cf779b (att)
     ],
   },
 ]);
