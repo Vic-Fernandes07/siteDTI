@@ -42,7 +42,7 @@ const router = createBrowserRouter([
       { path: "/perfil", element: <Perfil /> },
       // { path: "/perfil", element: <Perfil /> },
       { path: "/logingoogle", element: <LoginGoogle /> },
-      { path: "/perfil", element: <Profile /> },
+      { path: "/perfil", element: <Perfil /> },
 
     ],
   },
