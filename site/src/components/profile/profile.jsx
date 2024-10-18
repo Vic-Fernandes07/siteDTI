@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./profile.css"; 
+import "./profile.css";
 
 const Profile = () => {
   const [bio, setBio] = useState("");
@@ -18,6 +18,13 @@ const Profile = () => {
       };
       reader.readAsDataURL(file);
     }
+  };
+
+  const handleLogout = () => {
+    // Lógica de logout aqui (exemplo genérico)
+    console.log("Usuário saiu");
+    // Aqui você pode redirecionar o usuário para a página de login, por exemplo
+    // window.location.href = "/login";
   };
 
   return (
@@ -44,7 +51,7 @@ const Profile = () => {
       <button onClick={() => {/* Lógica para salvar o perfil */}}>
         Salvar Perfil
       </button>
-    </div>
+    </div>    
   );
 };
 
