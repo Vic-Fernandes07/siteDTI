@@ -4,6 +4,8 @@ import "./profile.css";
 const Profile = () => {
   const [bio, setBio] = useState("");
   const [profilePic, setProfilePic] = useState("");
+  const [username, setUsername] = useState(""); // Estado para o nome de usuário
+  const [error, setError] = useState(""); // Estado para mensagens de erro
 
   const handleBioChange = (event) => {
     setBio(event.target.value);
@@ -20,11 +22,30 @@ const Profile = () => {
     }
   };
 
+  const handleUsernameChange = (event) => {
+    setUsername(event.target.value);
+  };
+
+  const validateUsername = (username) => {
+    const regex = /^[a-zA-Z0-9_.-]+$/; // Regex para validar o nome de usuário
+    return regex.test(username);
+  };
+
+  const handleSaveProfile = () => {
+    if (!validateUsername(username)) {
+      setError(
+        "O nome de usuário deve conter apenas letras, números e os sinais _ , - e ."
+      );
+      return;
+    }
+    setError(""); // Limpa a mensagem de erro se a validação passar
+    // Lógica para salvar o perfil (exemplo genérico)
+    console.log("Perfil salvo:", { username, bio, profilePic });
+  };
+
   const handleLogout = () => {
-    // Lógica de logout aqui (exemplo genérico)
     console.log("Usuário saiu");
-    // Aqui você pode redirecionar o usuário para a página de login, por exemplo
-    // window.location.href = "/login";
+    // Redirecionar o usuário para a página de login, se necessário
   };
 
   return (
@@ -40,6 +61,16 @@ const Profile = () => {
         <input type="file" id="profilePic" onChange={handleProfilePicChange} />
       </div>
       <div className="form-group">
+        <label htmlFor="username">Nome de Usuário:</label>
+        <input
+          type="text"
+          id="username"
+          value={username}
+          onChange={handleUsernameChange}
+          placeholder="Escolha um nome de usuário..."
+        />
+      </div>
+      <div className="form-group">
         <label htmlFor="bio">Biografia:</label>
         <textarea
           id="bio"
@@ -48,10 +79,10 @@ const Profile = () => {
           placeholder="Escreva sua biografia aqui..."
         />
       </div>
-      <button onClick={() => {/* Lógica para salvar o perfil */}}>
-        Salvar Perfil
-      </button>
-    </div>    
+      {error && <p className="error-message">{error}</p>}{" "}
+      {/* Mensagem de erro */}
+      <button onClick={handleSaveProfile}>Salvar Perfil</button>
+    </div>
   );
 };
 
